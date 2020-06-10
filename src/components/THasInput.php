@@ -21,4 +21,14 @@ trait THasInput
     {
         return $this->config[IHasInput::FIELD__INPUT];
     }
+
+    /**
+     * @param string $name
+     * @param string $default
+     * @return string
+     */
+    public function getInputOption(string $name, string $default = ''): string
+    {
+        return $this->getInput()->hasOption($name) ? $this->getInput()->getOption($name) : $default;
+    }
 }

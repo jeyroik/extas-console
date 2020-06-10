@@ -29,7 +29,7 @@ class ConsoleTest extends TestCase
         $output = $this->getOutput(true);
 
         $item = new class ([
-            IHasIO::FIELD__INPUT => $this->getInput(),
+            IHasIO::FIELD__INPUT => $this->getInput(['test' => 'is ok']),
             IHasIO::FIELD__OUTPUT => $output
         ]) {
             use THasIO;
@@ -56,5 +56,7 @@ class ConsoleTest extends TestCase
         }
 
         $this->assertCount(2, $item->getIO());
+        $this->assertEquals('is ok', $item->getInputOption('test', 'default'));
+        $this->assertEquals('default', $item->getInputOption('unknown', 'default'));
     }
 }
