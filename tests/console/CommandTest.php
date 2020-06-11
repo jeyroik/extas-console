@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class CommandTest
- * 
+ *
  * @package tests\console
  * @author jeyroik <jeyroik@gmail.com>
  */
