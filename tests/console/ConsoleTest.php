@@ -1,5 +1,5 @@
 <?php
-namespace tests;
+namespace tests\console;
 
 use extas\interfaces\IHasIO;
 
